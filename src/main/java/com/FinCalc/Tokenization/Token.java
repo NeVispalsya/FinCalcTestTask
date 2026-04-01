@@ -1,4 +1,4 @@
-package com.FinCalc;
+package com.FinCalc.Tokenization;
 
 public class Token {
     TokenType type;

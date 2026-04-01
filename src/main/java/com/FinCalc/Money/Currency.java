@@ -1,4 +1,4 @@
-package com.FinCalc;
+package com.FinCalc.Money;
 
 enum Currency {
     $, eur;

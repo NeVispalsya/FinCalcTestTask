@@ -1,4 +1,4 @@
-package com.FinCalc;
+package com.FinCalc.Tokenization;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ public class Tokenizer {
     public void addTokenFromBuilder(StringBuilder sb,List<Token> tokens){
         if (!sb.isEmpty()) {
             if(Character.isLetter(sb.charAt(0))){
-                tokens.add(new Token(sb.toString(),TokenType.FUNCTION));
+                tokens.add(new Token(sb.toString(), TokenType.FUNCTION));
                 sb.setLength(0);
             }else{
                 tokens.add(new Token(sb.toString(),TokenType.NUMBER));
