@@ -1,8 +1,5 @@
 package com.FinCalc.Money;
-
-import com.FinCalc.Currency;
 import com.FinCalc.Exception.InvalidMoneyOperationException;
-
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
