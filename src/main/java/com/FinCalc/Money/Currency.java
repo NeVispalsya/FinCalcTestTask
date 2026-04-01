@@ -1,5 +1,5 @@
 package com.FinCalc.Money;
 
-enum Currency {
+public enum Currency {
     $, eur;
 }
