@@ -42,5 +42,4 @@ public class Tokenizer {
         addTokenFromBuilder(sb,tokens);
         return tokens;
     }
-
 }

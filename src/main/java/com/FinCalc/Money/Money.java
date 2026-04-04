@@ -10,6 +10,10 @@ public class Money {
         this.amount = amount.setScale(2);
         this.currency = currency;
     }
+    public Money(BigDecimal amount) {
+        this.amount = amount.setScale(2);
+    }
+
     public BigDecimal getAmount() {
         return amount;
     }
@@ -24,6 +28,15 @@ public class Money {
 
     public String toStringToDollar() {
         return ""+currency+amount ;
+    }
+
+    @Override
+    public String toString() {
+        if(currency == Currency.$){
+            return "$" + amount;
+        } else {
+            return amount + "eur";
+        }
     }
 
     public Money plus(Money money){

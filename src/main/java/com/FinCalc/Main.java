@@ -7,27 +7,33 @@ import com.FinCalc.Tokenization.Token;
 import com.FinCalc.Tokenization.Tokenizer;
 
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-//        String input = "toDollar($10 + 5eur)";
-//        Tokenizer tokenizer = new Tokenizer();
-//        List<Token> tokens = tokenizer.tokenize(input);
-//        for (Token t : tokens) {
-//            System.out.println(t.getType() + " : " + t.getValue());
-//        }
+        boolean calc = true;
+        do{
+            Scanner scanner = new Scanner(System.in);
 
-        String input = "$10 + 5eur";
+            String input = scanner.nextLine();
 
-        Tokenizer tokenizer = new Tokenizer();
-        List<Token> tokens = tokenizer.tokenize(input);
+            Tokenizer tokenizer = new Tokenizer();
 
-        ExpressionParser parser = new ExpressionParser();
-        Expression expression = parser.parse(tokens);
+            List<Token> tokens = tokenizer.tokenize(input);
 
-        Money result = expression.evaluate();
+            ExpressionParser parser = new ExpressionParser();
 
-        System.out.println(result.getAmount() + " " + result.getCurrency());
+            Expression expression = parser.parse(tokens);
 
+            Money result = expression.evaluate();
+
+            System.out.println(result);
+
+            String again = scanner.nextLine();
+
+            if (again.equals("f")){
+                calc=false;
+            }
+        }while (calc);
     }
 }
