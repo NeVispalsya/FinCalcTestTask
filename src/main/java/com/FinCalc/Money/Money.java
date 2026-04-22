@@ -1,6 +1,7 @@
 package com.FinCalc.Money;
 import com.FinCalc.Exception.InvalidMoneyOperationException;
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class Money {
     private BigDecimal amount;
@@ -52,5 +53,17 @@ public class Money {
         }else{
             throw new InvalidMoneyOperationException("Cannot subtract "+money.getCurrency()+" from "+getCurrency());
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Money money = (Money) o;
+        return Objects.equals(amount, money.amount) && currency == money.currency;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(amount, currency);
     }
 }
